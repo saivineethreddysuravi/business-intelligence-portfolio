@@ -80,6 +80,40 @@ class FinancialAnalyzer:
             rate = segment[segment['Personal Loan'] == 1].shape[0] / len(segment) * 100
             print(f"Education Level {edu_level} Conversion Rate: {rate:.2f}%")
 
+    def analyze_spending_power(self, output_dir='output'):
+        """
+        Analyzes the correlation between Credit Card spending and Loan uptake.
+        Calculates approximate Credit Utilization/Spending Power ratio.
+        """
+        if self.df is None:
+            return
+
+        print("\n--- Spending Power Analysis ---")
+        # CCAvg is Avg. spending on credit cards per month ($000)
+        # Income is Annual Income ($000)
+        # Spending Ratio = (CCAvg * 12) / Income
+        
+        # Avoid division by zero
+        self.df['Annual_CC_Spend'] = self.df['CCAvg'] * 12
+        self.df['Spending_to_Income_Ratio'] = self.df['Annual_CC_Spend'] / (self.df['Income'] + 0.01)
+        
+        avg_ratio_loan = self.df[self.df['Personal Loan'] == 1]['Spending_to_Income_Ratio'].mean()
+        avg_ratio_no_loan = self.df[self.df['Personal Loan'] == 0]['Spending_to_Income_Ratio'].mean()
+        
+        print(f"Avg Spending/Income Ratio (Loan Takers): {avg_ratio_loan:.2%}")
+        print(f"Avg Spending/Income Ratio (Non-Takers): {avg_ratio_no_loan:.2%}")
+        
+        # Visualization
+        plt.figure(figsize=(10, 6))
+        sns.kdeplot(data=self.df, x='Spending_to_Income_Ratio', hue='Personal Loan', fill=True, palette='crest')
+        plt.title('Spending Power Density by Loan Status')
+        plt.xlabel('Credit Card Spending / Annual Income Ratio')
+        plt.xlim(0, 1) # Limit to reasonable range
+        
+        output_path = os.path.join(output_dir, 'spending_power_density.png')
+        plt.savefig(output_path)
+        print(f"Saved spending power plot to {output_path}")
+
 if __name__ == "__main__":
     # Path relative to script execution
     FILE_PATH = "Bank_Personal_Loan_Modelling.xlsx" 
@@ -89,3 +123,4 @@ if __name__ == "__main__":
         engine.calculate_conversion_metrics()
         engine.analyze_income_distribution()
         engine.generate_summary_report()
+        engine.analyze_spending_power()
