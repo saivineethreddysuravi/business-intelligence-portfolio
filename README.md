@@ -19,6 +19,10 @@ A collection of advanced data analysis projects demonstrating statistical rigor,
 - **Libraries:** Pandas, NumPy, Matplotlib, Seaborn, Scikit-Learn
 - **Tools:** Jupyter Notebook
 
+## Day 4: Dashboarding & Visual Insights
+- Created a dedicated `dashboards/` directory for Power BI/Tableau layout strategy.
+- Implemented visual dashboards for tracking hotel booking trends and loan conversion.
+
 ## About the Analyst
 **Sai Vineeth Reddy Suravi**
 Data Analyst | Business Intelligence Specialist
