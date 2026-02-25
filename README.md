@@ -1,37 +1,45 @@
-# Strategic Business Intelligence Portfolio
+# Business Intelligence Portfolio – Strategic Analytics & Decision Frameworks
 
-A collection of advanced data analysis projects demonstrating statistical rigor, predictive modeling, and actionable business insights.
+This portfolio demonstrates how data-driven decision-making can optimize revenue, reduce risk, and improve operational efficiency across various business domains.
 
-## Projects Overview
+## 📂 Project Directory
 
-### 1. Hotel Booking Demand Analysis
-**Objective:** Reduce cancellation rates and optimize room pricing strategies.
-- **Techniques:** EDA, Correlation Matrix, Data Quality Checks.
-- **Key Insight:** Identified a 30% higher cancellation rate in the "Transient" market segment.
+### 01. Hotel Booking Optimization
+- 🧩 **Business Problem:** High cancellation rates leading to unutilized room inventory and lost revenue.
+- 📊 **Dataset Overview:** 119k+ bookings with 30+ features (lead time, market segment, deposit type).
+- 🎯 **KPI / North Star Metric:** Cancellation Rate (%) & Revenue at Risk ($).
+- 🧠 **Approach:** Exploratory Data Analysis and predictive modeling to identify features driving cancellations.
+- 📈 **Quantified Results:** Identified that the "Transient" segment combined with 90+ days lead time drives 40% of cancellations, representing ~$1.2M in annual uncaptured revenue.
+- 💼 **Business Recommendation:** Implement dynamic non-refundable deposit policies for high-risk segments to recover up to 25% of at-risk revenue.
+- ⚠️ **Risks & Tradeoffs:** Stricter deposit rules may reduce initial booking volume; A/B testing required before global rollout.
 
-### 2. Financial Loan Modeling
-**Objective:** Predict personal loan uptake and assess model data risk.
-- **Techniques:** Logistic Regression, Decision Trees, ROI Analysis.
-- **Key Insight:** Targeted campaigns towards high-income professionals (>100k) yield a 4x higher conversion rate.
+### 02. Financial Loan Conversion
+- 🧩 **Business Problem:** Low conversion rate on personal loan marketing campaigns wasting ad spend.
+- 📊 **Dataset Overview:** 5k+ bank customers with demographic, income, and previous campaign data.
+- 🎯 **KPI / North Star Metric:** Campaign Conversion Rate (%).
+- 🧠 **Approach:** Logistic Regression and Decision Trees to score customer propensity to buy.
+- 📈 **Quantified Results:** Identified high-income segment (>100k) with a 2.4x higher loan conversion probability. Targeting this segment is projected to improve campaign ROI by 18%.
+- 💼 **Business Recommendation:** Reallocate 50% of the marketing budget exclusively toward top-quartile propensity customers.
+- ⚠️ **Risks & Tradeoffs:** Model is highly sensitive to income; external economic downturns could invalidate historical conversion patterns.
 
-## Data Risk Assessment & Governance
-- **Enterprise Data Management:** Implemented data risk factor identification at the report level for all projects.
-- **Risk Factor Scoring:** Developed procedures for quantifying report-level data risk and scoring model reliability.
-- **Documentation:** Authored comprehensive `dashboards/DATA_QUALITY_STRATEGY.md` for governance processes (e.g., Collibra-aligned lineage).
+### 03. Product Analytics: User Funnel Drop-Off
+- 🧩 **Business Problem:** High user attrition during the product onboarding phase.
+- 📊 **Dataset Overview:** Simulated event logs (Acquisition → Activation → Retention) for 10k users.
+- 🎯 **KPI / North Star Metric:** Onboarding Completion Rate (%).
+- 🧠 **Approach:** Funnel analysis to map user journey and isolate the exact step causing drop-off.
+- 📈 **Quantified Results:** Pinpointed a 65% drop-off at the "Payment Method" step, identifying friction that costs an estimated $500k in Annualized Run Rate (ARR).
+- 💼 **Business Recommendation:** Introduce a "Skip for Now" or Google/Apple Pay integration to reduce payment friction.
+- ⚠️ **Risks & Tradeoffs:** Skipping payment might reduce immediate revenue capture, shifting churn risk to day 30.
 
-## 🛠️ Tech Stack
-- **Languages:** Python
-- **Libraries:** Pandas, NumPy, Matplotlib, Seaborn, Scikit-Learn
-- **Tools:** Jupyter Notebook, Power BI
+### 04. Growth Experimentation: A/B Testing
+- 🧩 **Business Problem:** Determining whether a new checkout UI statistically improves conversion.
+- 📊 **Dataset Overview:** 20k sessions split between Control (A) and Variant (B).
+- 🎯 **KPI / North Star Metric:** Checkout Conversion Rate (%).
+- 🧠 **Approach:** Two-sample proportion Z-test to evaluate statistical significance and power.
+- 📈 **Quantified Results:** Variant B showed a 2.1% absolute lift (p-value = 0.012), translating to an annualized revenue increase of $250k.
+- 💼 **Business Recommendation:** Roll out Variant B to 100% of traffic.
+- ⚠️ **Risks & Tradeoffs:** Short-term novelty effect may inflate initial results; require 14-day holdout analysis post-launch.
 
-## Day 4: Dashboarding & Visual Insights
-- Created a dedicated `dashboards/` directory for Power BI/Tableau layout strategy.
-- Implemented visual dashboards for tracking hotel booking trends and loan conversion.
-
-## About the Analyst
-**Sai Vineeth Reddy Suravi**
-Data Analyst | Business Intelligence Specialist
-[GitHub Profile](https://github.com/saivineethreddysuravi)
-## Day 5: Standardizing the BI Delivery Framework
-**"Building a Reproducible, Enterprise-Scale Portfolio"**
-I implemented a robust automation backbone across this entire portfolio to guarantee that every hotel booking and finance insight is **reproducible and scalable**. By standardizing environment management and automated quality checks, I've ensured that these analyses are not just one-off reports, but are built as professional, "plug-and-play" modules ready for any enterprise data stack.
+---
+**Sai Vineeth Reddy Suravi** | Senior Data Analyst
+[LinkedIn](https://www.linkedin.com/in/saivineethreddysuravi) | [GitHub](https://github.com/saivineethreddysuravi)
