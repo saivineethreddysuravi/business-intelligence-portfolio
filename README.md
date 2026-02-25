@@ -43,3 +43,33 @@ This portfolio demonstrates how data-driven decision-making can optimize revenue
 ---
 **Sai Vineeth Reddy Suravi** | Senior Data Analyst
 [LinkedIn](https://www.linkedin.com/in/saivineethreddysuravi) | [GitHub](https://github.com/saivineethreddysuravi)
+
+## 📊 Dashboard Visualizations & Diagrams
+
+### Hotel Booking Optimization Dashboard
+![Hotel Booking Dashboard](assets/hotel_dashboard.png)
+
+*Interactive Power BI dashboards tracking cancellation risk factors, daily uncaptured revenue, and high-risk market segments.*
+
+### Analytics Architecture
+![Architecture Diagram](assets/architecture_diagram.png)
+
+## 🛠 Tech Stack & Environment
+- **Core Languages:** Python (Pandas, NumPy, Scikit-learn, Statsmodels)
+- **Data Visualization:** Power BI, Matplotlib, Seaborn
+- **Development & Version Control:** Jupyter Notebooks, Git, GitHub Actions (CI/CD for data quality checks)
+- **Deployment & Architecture:** Local Python Environments (see `requirements.txt`)
+
+## 🚀 Getting Started
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/saivineethreddysuravi/business-intelligence-portfolio.git
+   ```
+2. Set up the environment:
+   ```bash
+   python -m venv venv
+   source venv/bin/activate
+   pip install -r requirements.txt
+   ```
+3. Run the specific notebook or dashboard application.
