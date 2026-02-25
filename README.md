@@ -1,75 +1,62 @@
-# Business Intelligence Portfolio – Strategic Analytics & Decision Frameworks
+# Strategic Analytics & Decision Frameworks
+**Sai Vineeth Reddy Suravi | Senior Data Analyst**
 
-This portfolio demonstrates how data-driven decision-making can optimize revenue, reduce risk, and improve operational efficiency across various business domains.
-
-## 📂 Project Directory
-
-### 01. Hotel Booking Optimization
-- 🧩 **Business Problem:** High cancellation rates leading to unutilized room inventory and lost revenue.
-- 📊 **Dataset Overview:** 119k+ bookings with 30+ features (lead time, market segment, deposit type).
-- 🎯 **KPI / North Star Metric:** Cancellation Rate (%) & Revenue at Risk ($).
-- 🧠 **Approach:** Exploratory Data Analysis and predictive modeling to identify features driving cancellations.
-- 📈 **Quantified Results:** Identified that the "Transient" segment combined with 90+ days lead time drives 40% of cancellations, representing ~$1.2M in annual uncaptured revenue.
-- 💼 **Business Recommendation:** Implement dynamic non-refundable deposit policies for high-risk segments to recover up to 25% of at-risk revenue.
-- ⚠️ **Risks & Tradeoffs:** Stricter deposit rules may reduce initial booking volume; A/B testing required before global rollout.
-
-### 02. Financial Loan Conversion
-- 🧩 **Business Problem:** Low conversion rate on personal loan marketing campaigns wasting ad spend.
-- 📊 **Dataset Overview:** 5k+ bank customers with demographic, income, and previous campaign data.
-- 🎯 **KPI / North Star Metric:** Campaign Conversion Rate (%).
-- 🧠 **Approach:** Logistic Regression and Decision Trees to score customer propensity to buy.
-- 📈 **Quantified Results:** Identified high-income segment (>100k) with a 2.4x higher loan conversion probability. Targeting this segment is projected to improve campaign ROI by 18%.
-- 💼 **Business Recommendation:** Reallocate 50% of the marketing budget exclusively toward top-quartile propensity customers.
-- ⚠️ **Risks & Tradeoffs:** Model is highly sensitive to income; external economic downturns could invalidate historical conversion patterns.
-
-### 03. Product Analytics: User Funnel Drop-Off
-- 🧩 **Business Problem:** High user attrition during the product onboarding phase.
-- 📊 **Dataset Overview:** Simulated event logs (Acquisition → Activation → Retention) for 10k users.
-- 🎯 **KPI / North Star Metric:** Onboarding Completion Rate (%).
-- 🧠 **Approach:** Funnel analysis to map user journey and isolate the exact step causing drop-off.
-- 📈 **Quantified Results:** Pinpointed a 65% drop-off at the "Payment Method" step, identifying friction that costs an estimated $500k in Annualized Run Rate (ARR).
-- 💼 **Business Recommendation:** Introduce a "Skip for Now" or Google/Apple Pay integration to reduce payment friction.
-- ⚠️ **Risks & Tradeoffs:** Skipping payment might reduce immediate revenue capture, shifting churn risk to day 30.
-
-### 04. Growth Experimentation: A/B Testing
-- 🧩 **Business Problem:** Determining whether a new checkout UI statistically improves conversion.
-- 📊 **Dataset Overview:** 20k sessions split between Control (A) and Variant (B).
-- 🎯 **KPI / North Star Metric:** Checkout Conversion Rate (%).
-- 🧠 **Approach:** Two-sample proportion Z-test to evaluate statistical significance and power.
-- 📈 **Quantified Results:** Variant B showed a 2.1% absolute lift (p-value = 0.012), translating to an annualized revenue increase of $250k.
-- 💼 **Business Recommendation:** Roll out Variant B to 100% of traffic.
-- ⚠️ **Risks & Tradeoffs:** Short-term novelty effect may inflate initial results; require 14-day holdout analysis post-launch.
+This repository contains high-impact business intelligence projects focused on revenue optimization, risk mitigation, and product growth. Each project is structured as a case study focused on converting complex datasets into actionable executive decisions.
 
 ---
-**Sai Vineeth Reddy Suravi** | Senior Data Analyst
-[LinkedIn](https://www.linkedin.com/in/saivineethreddysuravi) | [GitHub](https://github.com/saivineethreddysuravi)
 
-## 📊 Dashboard Visualizations & Diagrams
+## 01. Hotel Revenue Recovery: Tackling High Cancellation Rates
+**The Challenge:** High cancellation volumes were creating significant inventory instability, leading to unutilized room capacity and projected revenue loss.
 
-### Hotel Booking Optimization Dashboard
-![Hotel Booking Dashboard](assets/hotel_dashboard.png)
+- **Dataset:** 119,000+ booking records across 30+ features including lead time, market segments, and deposit history.
+- **Primary Metric:** Cancellation Rate (%) & Revenue at Risk ($).
+- **Analytical Strategy:** Performed a deep-dive correlation analysis and built a predictive model to isolate high-risk booking profiles.
+- **Revenue Impact:** Identified that the "Transient" market segment, when combined with a lead time exceeding 90 days, accounted for 40% of all cancellations. This represents a ~$1.2M revenue leak.
+- **Business Decision:** Recommended a dynamic deposit framework. By implementing non-refundable requirements for high-risk lead-time buckets, the organization can recover an estimated 25% of at-risk revenue.
+- **Tradeoffs:** Stricter policies may impact initial booking velocity; recommended a phased rollout via A/B testing to monitor top-of-funnel impact.
 
-*Interactive Power BI dashboards tracking cancellation risk factors, daily uncaptured revenue, and high-risk market segments.*
+---
 
-### Analytics Architecture
-![Architecture Diagram](assets/architecture_diagram.png)
+## 02. Marketing ROI: Propensity Modeling for Loan Conversion
+**The Challenge:** Current personal loan marketing campaigns suffered from low conversion rates, resulting in inefficient ad spend and high cost-per-acquisition (CPA).
 
-## 🛠 Tech Stack & Environment
-- **Core Languages:** Python (Pandas, NumPy, Scikit-learn, Statsmodels)
-- **Data Visualization:** Power BI, Matplotlib, Seaborn
-- **Development & Version Control:** Jupyter Notebooks, Git, GitHub Actions (CI/CD for data quality checks)
-- **Deployment & Architecture:** Local Python Environments (see `requirements.txt`)
+- **Dataset:** 5,000+ customer records including demographic data, professional income levels, and historical campaign response.
+- **Primary Metric:** Campaign Conversion Rate (%).
+- **Analytical Strategy:** Developed a propensity scoring model (Logistic Regression & Decision Trees) to rank customers based on their likelihood to convert.
+- **Revenue Impact:** Analysis revealed that high-income professionals (>100k) had a 2.4x higher conversion probability. Re-targeting this segment is projected to increase campaign ROI by 18%.
+- **Business Decision:** Reallocated 50% of the quarterly marketing budget to the top-quartile propensity scores to maximize conversion yield.
+- **Tradeoffs:** Heavy reliance on income-based targeting; required a fallback strategy to ensure the model remains robust during economic shifts.
 
-## 🚀 Getting Started
+---
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/saivineethreddysuravi/business-intelligence-portfolio.git
-   ```
-2. Set up the environment:
-   ```bash
-   python -m venv venv
-   source venv/bin/activate
-   pip install -r requirements.txt
-   ```
-3. Run the specific notebook or dashboard application.
+## 03. Product Analytics: Onboarding Funnel Leakage
+**The Challenge:** Significant user attrition was identified during the product onboarding phase, resulting in lost subscriber lifetime value (LTV).
+
+- **Dataset:** Event-level logs for 10,000 users progressing through the Acquisition-Activation-Retention journey.
+- **Primary Metric:** Onboarding Completion Rate (%).
+- **Analytical Strategy:** Built a granular funnel model to isolate the specific interaction points causing user drop-off.
+- **Revenue Impact:** Pinpointed a 65% drop-off at the "Payment Method" step. This friction point is estimated to cost $500k in Annualized Run Rate (ARR).
+- **Business Decision:** Proposed a "Value-First" onboarding experiment—delaying payment collection until after core product activation or integrating 1-click payment (Apple/Google Pay).
+- **Tradeoffs:** Shifting payment collection further down the funnel increases the risk of day-30 churn; recommended monitoring the 90-day retention cohort.
+
+---
+
+## 04. Growth Experimentation: Checkout UI Conversion Lift
+**The Challenge:** Stakeholders needed to validate whether a new Checkout UI design statistically outperformed the legacy version before a global rollout.
+
+- **Dataset:** 20,000 user sessions randomized into Control (A) and Variant (B) groups.
+- **Primary Metric:** Checkout Conversion Rate (%).
+- **Analytical Strategy:** Executed a two-sample proportion Z-test to measure conversion lift with 95% statistical power.
+- **Revenue Impact:** Variant B demonstrated a 2.1% absolute lift (p-value = 0.012), projecting an incremental $250k in annualized revenue.
+- **Business Decision:** Approved 100% rollout of the new UI based on statistical significance.
+- **Tradeoffs:** Acknowledged potential "Novelty Effect"; mandated a 14-day holdout analysis to confirm the lift persists post-launch.
+
+---
+
+## Technical Stack & Governance
+- **Languages:** SQL (Snowflake, dbt), Python (Pandas, Scikit-Learn, Statsmodels)
+- **BI Tools:** Power BI (Expert DAX), Tableau, Excel (Advanced Modeling)
+- **Frameworks:** CI/CD for Data Quality (GitHub Actions), Reproducible Notebooks
+
+---
+[LinkedIn](https://www.linkedin.com/in/saivineethreddysuravi) | [GitHub](https://github.com/saivineethreddysuravi) | [Portfolio](https://vineeeth.com)
